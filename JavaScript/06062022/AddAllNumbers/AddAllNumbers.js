@@ -13,12 +13,11 @@
     1 ≤ |S| ≤ 1000, where |S| is the length of the string S.
  * 
  */
- function addAllNumbers(str){
+ function addNumbersOnly(str){
 
     let result = 0;
     list = str.split('');
 
-    
     for(let i=0; i<list.length;i++){
         if(!isNaN(list[i])){
             //console.log('this is a number: ' + list[i]);
@@ -41,6 +40,6 @@ for(let i=0; i<T;i++){
 
 //goes through list and apply logic
 for(let print of input){
-    console.log(addAllNumbers(print));
+    console.log(addNumbersOnly(print));
 }
 
