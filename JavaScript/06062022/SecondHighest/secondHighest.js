@@ -14,9 +14,14 @@
  * The three integers in a single triplet are all distinct. That is, no two of them are equal.
  * 
  */
+
+const fs = require('fs');
+const readline = require('readline');
+
+
 function secondHighest(str){
 
-    list = str.split(' ');
+    let list = str.split(' ');
     
     //sort here
     list.sort();
@@ -25,19 +30,27 @@ function secondHighest(str){
 
 }
 
-let N = parseInt(readline());
-let input = [];
-// var N = 1;
-// var input = ['5 3 6', '8 9 20'];
 
-//read each line of sets of 3 numbers inputs here
-for(let i=0; i<N;i++){
-    input.push(readline());
-}
+fs.readFile('input.txt', (err, data) => {
+    if (err) throw err;
+  
+    //console.log(data.toString());
+    let list = data.toString().split('\r\n');
+    let N = parseInt(list[0].replace('\r\n1', ''));
 
-//code here
+    //read each line of sets of 3 numbers inputs here
+    for(let i=1; i<=N; i++){
+        console.log(secondHighest(list[i]));;
+    }
+})
 
-for(let print of input){
-    console.log(secondHighest(print));
-}
+
+// var T = parseInt(readline());
+// var input = [];
+// // let N = parseInt(readline());
+// // let input = [];
+// // var N = 1;
+// // var input = ['5 3 6', '8 9 20'];
+
+
 
