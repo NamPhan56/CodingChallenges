@@ -36,7 +36,6 @@ public class AddAllNumbers {
 	}
 
 	public int addNumbersOnly(String str){
-
         int result = 0;
         String[] tokenList = str.split("");
     
