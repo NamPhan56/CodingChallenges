@@ -28,7 +28,7 @@ function secondHighest(str){
         list2.push(parseInt(numstr));
     }
     //sort here
-    list2 = list2.sort();
+    list2.sort();
 
     return list[list.length-2];
 }
