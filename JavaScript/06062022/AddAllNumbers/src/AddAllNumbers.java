@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -26,6 +25,7 @@ public class AddAllNumbers {
 	        for(int i=0; i<Integer.parseInt(T);i++){
 	            input.add(sc.nextLine());
 	        }
+			sc.close();
 
 	        //goes through list and apply logic
 	        for(String print : input){
