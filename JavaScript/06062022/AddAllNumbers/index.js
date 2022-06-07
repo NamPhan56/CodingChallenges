@@ -21,7 +21,7 @@
     
     for(let i=0; i<list.length;i++){
         if(!isNaN(list[i])){
-            console.log('this is a number: ' + list[i]);
+            //console.log('this is a number: ' + list[i]);
             result+= parseInt(list[i]);
         } 
     }
