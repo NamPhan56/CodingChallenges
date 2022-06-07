@@ -30,26 +30,20 @@ function addNumbersOnly(str){
     return result;
 }
 
-file = open("input.txt", "r");
-
-// fs.readFile('Input.txt', (err, data) => {
-//     if (err) throw err;
+fs.readFile('input.txt', (err, data) => {
+    if (err) throw err;
   
-//     console.log(data.toString());
-// })
+    //console.log(data.toString());
+    let list = data.toString().split('\r\n');
+    let T = parseInt(list[0].replace('\r\n1', ''));
+    // let T = 1;
+    // let input = ['ab1231da'];
 
-var T = parseInt(file.readline());
-var input = [];
-// let T = 1;
-// let input = ['ab1231da'];
+    //read each line of sets of 3 numbers inputs here
+    for(let i=1; i<=T; i++){
+        console.log(addNumbersOnly(list[i]));;
+    }
+})
 
-//adds inputs to a list
-for(let i=0; i<T;i++){
-    input.push(readline());
-}
 
-//goes through list and apply logic
-for(let print of input){
-    console.log(addNumbersOnly(print));
-}
 
