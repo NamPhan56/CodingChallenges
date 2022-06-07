@@ -29,7 +29,6 @@ function secondHighest(str){
     return list[list.length-2];
 }
 
-
 // // var N = 1;
 // // var input = ['5 3 6', '8 9 20'];
 
