@@ -25,17 +25,17 @@ function secondHighest(str){
 
 }
 
-//var N = parseInt(readline());
-var N = 1;
-var input = ['5 3 6', '8 9 20'];
+let N = parseInt(readline());
+let input = [];
+// var N = 1;
+// var input = ['5 3 6', '8 9 20'];
+
+//read each line of sets of 3 numbers inputs here
 for(let i=0; i<N;i++){
-    //input.push(readline());
+    input.push(readline());
 }
 
-
 //code here
-
-//
 
 for(let print of input){
     console.log(secondHighest(print));

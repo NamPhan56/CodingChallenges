@@ -14,25 +14,34 @@
  * The three integers in a single triplet are all distinct. That is, no two of them are equal.
  * 
  */
-function secondHighest(str){
+ function addAllNumbers(str){
 
-    list = str.split(' ');
+    let result = 0;
+    list = str.split('');
 
+    
+    for(let i=0; i<list.length;i++){
+        if(!isNaN(list[i])){
+            console.log('this is a number: ' + list[i]);
+            result+= parseInt(list[i]);
+        } 
+    }
+    return result;
 
 }
 
-var N = parseInt(readline()); //
+var T = parseInt(readline());
 var input = [];
-for(let i=0; i<N;i++){
+// let T = 1;
+// let input = ['ab1231da'];
+
+//adds inputs to a list
+for(let i=0; i<T;i++){
     input.push(readline());
 }
 
-
-//code here
-
-//
-
+//goes through list and apply logic
 for(let print of input){
-    console.log(print);
+    console.log(addAllNumbers(print));
 }
 
