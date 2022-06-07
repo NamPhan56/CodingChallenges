@@ -22,9 +22,13 @@ const readline = require('readline');
 function secondHighest(str){
 
     let list = str.split(' ');
-    
+    let list2=[];
+
+    for(let numstr in list){
+        list2.push(parseInt(numstr));
+    }
     //sort here
-    list.sort();
+    list2 = list2.sort();
 
     return list[list.length-2];
 }
