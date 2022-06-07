@@ -27,9 +27,11 @@ function secondHighest(str){
     list.sort();
 
     return list[list.length-2];
-
 }
 
+
+// // var N = 1;
+// // var input = ['5 3 6', '8 9 20'];
 
 fs.readFile('input.txt', (err, data) => {
     if (err) throw err;
@@ -45,12 +47,6 @@ fs.readFile('input.txt', (err, data) => {
 })
 
 
-// var T = parseInt(readline());
-// var input = [];
-// // let N = parseInt(readline());
-// // let input = [];
-// // var N = 1;
-// // var input = ['5 3 6', '8 9 20'];
 
 
 

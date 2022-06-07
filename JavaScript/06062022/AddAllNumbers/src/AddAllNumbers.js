@@ -13,7 +13,10 @@
     1 ≤ |S| ≤ 1000, where |S| is the length of the string S.
  * 
  */
- function addNumbersOnly(str){
+const fs = require('fs');
+const readline = require('readline');
+
+function addNumbersOnly(str){
 
     let result = 0;
     list = str.split('');
@@ -25,10 +28,17 @@
         } 
     }
     return result;
-
 }
 
-var T = parseInt(readline());
+file = open("input.txt", "r");
+
+// fs.readFile('Input.txt', (err, data) => {
+//     if (err) throw err;
+  
+//     console.log(data.toString());
+// })
+
+var T = parseInt(file.readline());
 var input = [];
 // let T = 1;
 // let input = ['ab1231da'];

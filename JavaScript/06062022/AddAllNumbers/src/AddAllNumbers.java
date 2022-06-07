@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 public class AddAllNumbers {
 	public static void main(String[] args) throws FileNotFoundException {
-		 // pass the path to the file as a parameter
-		//System.out.println(System.getProperty("java.class.path"));
 
 		File file = new File(System.getProperty("java.class.path")+"\\input.txt");
         AddAllNumbers indx = new AddAllNumbers();
