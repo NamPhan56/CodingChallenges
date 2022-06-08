@@ -7,13 +7,13 @@ public class AddAllNumbers {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		File file = new File(System.getProperty("java.class.path")+"\\input.txt");
-        AddAllNumbers indx = new AddAllNumbers();
+        	AddAllNumbers indx = new AddAllNumbers();
         
-        Scanner sc = new Scanner(file);
+        	Scanner sc = new Scanner(file);
 		String T = sc.nextLine();
 		ArrayList<String> input = new ArrayList<String>();
 		
-//			String T = "1";
+//		String T = "1";
 //	        ArrayList<String> input = new ArrayList<String>();
 //	        input.add(T);
 //	        input.add("ab1231da");
@@ -32,15 +32,15 @@ public class AddAllNumbers {
 	}
 
 	public int addNumbersOnly(String str){
-        int result = 0;
-        String[] tokenList = str.split("");
-    
-        for(int i=0; i<tokenList.length;i++){
-            if(Character.isDigit(tokenList[i].charAt(0))){
-                //console.log('this is a number: ' + list[i]);
-                result+= Integer.parseInt(tokenList[i]);
-            } 
-        }
-        return result;
-    }
-}
+		int result = 0;
+		String[] tokenList = str.split("");
+
+		for(int i=0; i<tokenList.length;i++){
+		    if(Character.isDigit(tokenList[i].charAt(0))){
+			//console.log('this is a number: ' + list[i]);
+			result+= Integer.parseInt(tokenList[i]);
+		    } 
+		}
+		return result;
+   	}
+}	
