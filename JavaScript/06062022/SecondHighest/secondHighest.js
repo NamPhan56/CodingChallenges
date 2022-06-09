@@ -24,13 +24,13 @@ function secondHighest(str){
     let list = str.split(' ');
     let list2=[];
 
-    for(let numstr in list){
+    for(let numstr of list){
         list2.push(parseInt(numstr));
     }
     //sort here
     list2.sort();
 
-    return list[list.length-2];
+    return list2[1];
 }
 
 // // var N = 1;
