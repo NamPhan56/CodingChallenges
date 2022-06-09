@@ -28,6 +28,7 @@ function secondHighest(str){
         list2.push(parseInt(numstr));
     }
     //sort here
+    //note: js array.sort uses insertion sort, so not as efficient for larger data sets.
     list2.sort();
 
     return list2[1];
