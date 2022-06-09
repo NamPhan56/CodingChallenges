@@ -14,7 +14,6 @@
  * 
  */
 const fs = require('fs');
-const readline = require('readline');
 
 function addNumbersOnly(str){
 

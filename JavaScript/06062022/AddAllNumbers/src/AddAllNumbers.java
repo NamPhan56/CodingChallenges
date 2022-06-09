@@ -7,16 +7,16 @@ public class AddAllNumbers {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		File file = new File(System.getProperty("java.class.path")+"\\input.txt");
-        	AddAllNumbers indx = new AddAllNumbers();
+        AddAllNumbers indx = new AddAllNumbers();
         
-        	Scanner sc = new Scanner(file);
+        Scanner sc = new Scanner(file);
 		String T = sc.nextLine();
 		ArrayList<String> input = new ArrayList<String>();
 		
 //		String T = "1";
-//	        ArrayList<String> input = new ArrayList<String>();
-//	        input.add(T);
-//	        input.add("ab1231da");
+//	    ArrayList<String> input = new ArrayList<String>();
+//	    input.add(T);
+//	    input.add("ab1231da");
 
 		//adds inputs to a list
 		for(int i=0; i<Integer.parseInt(T);i++){
