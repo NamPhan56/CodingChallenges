@@ -23,6 +23,10 @@ nums2.length == n
 
 */
 
+/**
+ * case 1: if median1 = median2
+ * 
+ */
 const fs = require('fs');
 
 fs.readFile('input.txt', (err, data) => {
@@ -46,7 +50,7 @@ fs.readFile('input.txt', (err, data) => {
     for(let i of list2){
         listNum2.push(parseInt(i));
     }
-    //logic here
+    //run algorithm here
     console.log(findMedian(listNum1, listNum2));
 
 })
