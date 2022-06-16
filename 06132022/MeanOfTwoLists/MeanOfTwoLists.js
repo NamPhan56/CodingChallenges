@@ -56,72 +56,89 @@ fs.readFile('input.txt', (err, data) => {
 })
 
 
-//takes two sorted lists and returns the median both merged lists.
-function findMedian(listNum1, listNum2){
-    
-    console.log(listNum1);
-    console.log(listNum2);
+//bruteforce
+function findMedian(nums1, nums2){
 
-    let n = listNum1.length;
-    let m = listNum2.length;
-
+    let n = nums1.length;
+    let m = nums2.length;
     let median = 0;
 
     //base cases
-    if(listNum1.length==0){
-        if(listNum2.length%2==0){ //even number of elements
-            let index=Math.floor(listNum2.length/2)
-            median = listNum2[index] + listNum2[index+1]/2;
+    if(nums1.length==0){ //O(1)
+        if(nums2.length%2==0){ //even number of elements
+            let index=Math.floor(nums2.length/2)
+            median = nums2[index] + nums2[index+1]/2;
             return (median);
         }
         else{
-            return listNum2[(listNum2.length-1)/2];
+            return nums2[(nums2.length-1)/2];
         }
     }
-    else if(listNum2.length==0){
-        if(listNum1.length%2==0){ //even number of elements
-            let index=Math.floor(listNum1.length/2)-1;
-            median = listNum1[index] + listNum1[index+1]/2;
+    else if(nums2.length==0){ //O(1)
+        if(nums1.length%2==0){ //even number of elements
+            let index=Math.floor(nums1.length/2)-1;
+            median = nums1[index] + nums1[index+1]/2;
             return (median);
         }
         else{
-            return listNum1[(listNum1.length-1)/2];
+            return nums1[(nums1.length-1)/2];
         }
     }
 
     else{ //if at least m or n are not 0;
 
-        //first find the medians of both lists
-        let l1medianIndex= Math.floor((listNum1.length-1)/2); //for odd number of elements
-        let l2medianIndex = Math.floor((listNum2.length-1)/2); //for odd number of elements
-
-        let list1StartIndex=0;
-        let list1EndIndex=0;
-
-        let list2StartIndex=0;
-        let list2EndIndex=0;
-
-        if(l1medianIndex > l2medianIndex){
-            //median is in the left half of the list 1.
-            list1StartIndex = 0;
-            list1EndIndex = Math.floor((listNum1.length-1)/2);
-
-            //median is in the right half of list1
-            list2StartIndex = Math.floor((listNum2.length-1)/2);
-            list2EndIndex =  listNum2.length-1;
-
+        let list1,list2; //list1's length should always be greater than or equal to list2's length
+        //setup step
+        if(n>m){
+            list1 = nums1;
+            list2 = nums2;
         }
-        
+        else if (n<m){
+            list1 = nums2;
+            list2 = nums1;
+        }
+        else{ //equal
+            list1 = nums1;
+            list2 = nums2;
+        }
+
+        listMerged = [];
+        //merge step
+        let l1=0;
+        let l2=0;
+
+        while (l1 < list1.length && l2 < list2.length) {
+            if (list1[l1] <= list2[l2]) {
+                listMerged.push(list1[l1]);
+                l1++;
+            }
+            else {
+                listMerged.push(list2[l2]);
+                l2++;
+            }
+        }
+
+        while (l1 < list1.length) {
+            listMerged.push(list1[l1]);
+            l1++;
+        }
+
+        while (l2 < list2.length) {
+            listMerged.push(list2[l2]);
+            l2++;
+        }
+
+        //console.log(listMerged);
+
+        //calculate median
+        let half = Math.floor(listMerged.length/2);
+        if((listMerged.length %2) == 1){
+            return listMerged[half];
+        }
+        else{
+            return ((listMerged[half] + listMerged[half-1])/2);
+        }
     }
-
-   function divide(list1, list1StartIndex, lis1EndIndex, list2, list2StartIndex, list2EndIndex){
-
-   }
-
-
-
-
-
 
 }
 
