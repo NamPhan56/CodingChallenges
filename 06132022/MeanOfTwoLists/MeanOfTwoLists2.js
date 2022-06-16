@@ -24,7 +24,11 @@ nums2.length == n
 */
 
 /**
- *  this solution checks out on leetcode 76ms
+ *  this solution checks out on leetcode:
+ * 
+ *  Runtime: 144 ms, faster than 62.49% of JavaScript online submissions for Median of Two Sorted Arrays.
+    Memory Usage: 47 MB, less than 67.72% of JavaScript online submissions for Median of Two Sorted Arrays.
+
  * runs in O(m+n)
  */
  const fs = require('fs');
