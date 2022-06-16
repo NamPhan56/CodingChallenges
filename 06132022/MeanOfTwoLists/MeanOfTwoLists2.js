@@ -78,6 +78,28 @@ nums2.length == n
     let median = 0;
 
     //base cases
+    if(n===0){ //O(1)
+        if(m%2===0){ //even number of elements
+            let half=Math.floor(m/2)
+            median = (nums2[half] + nums2[half-1])/2;
+            return (median);
+        }
+        else{
+            return nums2[(m-1)/2];
+        }
+    }
+    else if(m===0){ //O(1)
+        if(n%2===0){ //even number of elements
+            let half=Math.floor(n/2);
+            median = (nums1[half] + nums1[half-1])/2;
+            return (median);
+        }
+        else{
+            return nums1[(n-1)/2];
+        }
+    }
+
+    else{ //if at least m or n are not 0;
 
     //if nums1 median ==  nums 2 median
 
@@ -89,7 +111,8 @@ nums2.length == n
     //if nums1 median < nums2 median
     //median is in 2nd half of nums1
     //and or median is in 1st half of nums2
- 
+
+    }
  }
  
  
