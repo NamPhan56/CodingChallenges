@@ -24,8 +24,8 @@ nums2.length == n
 */
 
 /**
- * case 1: if median1 = median2
- * 
+ *  this solution checks out on leetcode Runtime: 68 ms
+ * runs in O(m+n)
  */
 const fs = require('fs');
 
