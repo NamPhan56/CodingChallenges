@@ -26,10 +26,13 @@ nums2.length == n
 /**
  *  this solution checks out on leetcode:
  * 
- *  Runtime: 144 ms, faster than 62.49% of JavaScript online submissions for Median of Two Sorted Arrays.
-    Memory Usage: 47 MB, less than 67.72% of JavaScript online submissions for Median of Two Sorted Arrays.
-
- * runs in O(m+n)
+ * runs in O(log(n+m))
+ * 
+ * test input: 
+ *  1 2 3 4
+ *  4 5 6 7
+ * 
+ * median: (4+4)/2 = 
  */
  const fs = require('fs');
 
@@ -65,84 +68,27 @@ nums2.length == n
  
     let n = nums1.length;
     let m = nums2.length;
+    
+    let leftStartIndex = 0;
+    let leftEndIndex = 0;
+    
+    let rightStartIndex = 0;
+    let rightEndIndex = 0;
+    
     let median = 0;
 
     //base cases
-    if(n==0){ //O(1)
-        if(m%2==0){ //even number of elements
-            let half=Math.floor(m/2)
-            median = (nums2[half] + nums2[half-1])/2;
-            return (median);
-        }
-        else{
-            return nums2[(m-1)/2];
-        }
-    }
-    else if(m==0){ //O(1)
-        if(n%2==0){ //even number of elements
-            let half=Math.floor(n/2);
-            median = (nums1[half] + nums1[half-1])/2;
-            return (median);
-        }
-        else{
-            return nums1[(n-1)/2];
-        }
-    }
 
-    else{ //if at least m or n are not 0;
+    //if nums1 median ==  nums 2 median
 
-        let list1,list2; //list1's length should always be greater than or equal to list2's length
-        //setup step
-        if(n>m){
-            list1 = nums1;
-            list2 = nums2;
-        }
-        else if (n<m){
-            list1 = nums2;
-            list2 = nums1;
-        }
-        else{ //equal
-            list1 = nums1;
-            list2 = nums2;
-        }
+    //if nums1 median > nums2 median
+    //median is in 1st half of nums1
+    //and or median is in 2nd half of nums2
 
-        listMerged = [];
-        //merge step
-        let l1=0;
-        let l2=0;
 
-        while (l1 < list1.length && l2 < list2.length) {
-            if (list1[l1] <= list2[l2]) {
-                listMerged.push(list1[l1]);
-                l1++;
-            }
-            else {
-                listMerged.push(list2[l2]);
-                l2++;
-            }
-        }
-
-        while (l1 < list1.length) {
-            listMerged.push(list1[l1]);
-            l1++;
-        }
-
-        while (l2 < list2.length) {
-            listMerged.push(list2[l2]);
-            l2++;
-        }
-
-        //console.log(listMerged);
-
-        //calculate median
-        let half = Math.floor(listMerged.length/2);
-        if((listMerged.length %2) == 1){
-            return listMerged[half];
-        }
-        else{
-            return ((listMerged[half] + listMerged[half-1])/2);
-        }
-    }
+    //if nums1 median < nums2 median
+    //median is in 2nd half of nums1
+    //and or median is in 1st half of nums2
  
  }
  
