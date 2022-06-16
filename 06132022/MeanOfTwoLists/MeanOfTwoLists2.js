@@ -59,86 +59,86 @@ nums2.length == n
  // looking for O(log(n+m)) complexity
  function findMedian(nums1, nums2){
  
-     let n = nums1.length;
-     let m = nums2.length;
-     let median = 0;
- 
-     //base cases
-     if(nums1.length==0){ //O(1)
-         if(nums2.length%2==0){ //even number of elements
-             let index=Math.floor(nums2.length/2)
-             median = nums2[index] + nums2[index+1]/2;
-             return (median);
-         }
-         else{
-             return nums2[(nums2.length-1)/2];
-         }
-     }
-     else if(nums2.length==0){ //O(1)
-         if(nums1.length%2==0){ //even number of elements
-             let index=Math.floor(nums1.length/2)-1;
-             median = nums1[index] + nums1[index+1]/2;
-             return (median);
-         }
-         else{
-             return nums1[(nums1.length-1)/2];
-         }
-     }
- 
-     else{ //if at least m or n are not 0;
- 
-         let list1,list2; //list1's length should always be greater than or equal to list2's length
-         //setup step
-         if(n>m){
-             list1 = nums1;
-             list2 = nums2;
-         }
-         else if (n<m){
-             list1 = nums2;
-             list2 = nums1;
-         }
-         else{ //equal
-             list1 = nums1;
-             list2 = nums2;
-         }
- 
-         listMerged = [];
-         //merge step
-         let l1=0;
-         let l2=0;
- 
-         while (l1 < list1.length && l2 < list2.length) {
-             if (list1[l1] <= list2[l2]) {
-                 listMerged.push(list1[l1]);
-                 l1++;
-             }
-             else {
-                 listMerged.push(list2[l2]);
-                 l2++;
-             }
-         }
- 
-         while (l1 < list1.length) {
-             listMerged.push(list1[l1]);
-             l1++;
-         }
- 
-         while (l2 < list2.length) {
-             listMerged.push(list2[l2]);
-             l2++;
-         }
- 
-         //console.log(listMerged);
- 
-         //calculate median
-         let half = Math.floor(listMerged.length/2);
-         if((listMerged.length %2) == 1){
-             return listMerged[half];
-         }
-         else{
-             return ((listMerged[half] + listMerged[half-1])/2);
-         }
-     }
+    let n = nums1.length;
+    let m = nums2.length;
+    let median = 0;
+
+    //base cases
+    if(n==0){ //O(1)
+        if(m%2==0){ //even number of elements
+            let half=Math.floor(m/2)
+            median = (nums2[half] + nums2[half-1])/2;
+            return (median);
+        }
+        else{
+            return nums2[(m-1)/2];
+        }
+    }
+    else if(m==0){ //O(1)
+        if(n%2==0){ //even number of elements
+            let half=Math.floor(n/2);
+            median = (nums1[half] + nums1[half-1])/2;
+            return (median);
+        }
+        else{
+            return nums1[(n-1)/2];
+        }
+    }
+
+    else{ //if at least m or n are not 0;
+
+        let list1,list2; //list1's length should always be greater than or equal to list2's length
+        //setup step
+        if(n>m){
+            list1 = nums1;
+            list2 = nums2;
+        }
+        else if (n<m){
+            list1 = nums2;
+            list2 = nums1;
+        }
+        else{ //equal
+            list1 = nums1;
+            list2 = nums2;
+        }
+
+        listMerged = [];
+        //merge step
+        let l1=0;
+        let l2=0;
+
+        while (l1 < list1.length && l2 < list2.length) {
+            if (list1[l1] <= list2[l2]) {
+                listMerged.push(list1[l1]);
+                l1++;
+            }
+            else {
+                listMerged.push(list2[l2]);
+                l2++;
+            }
+        }
+
+        while (l1 < list1.length) {
+            listMerged.push(list1[l1]);
+            l1++;
+        }
+
+        while (l2 < list2.length) {
+            listMerged.push(list2[l2]);
+            l2++;
+        }
+
+        //console.log(listMerged);
+
+        //calculate median
+        let half = Math.floor(listMerged.length/2);
+        if((listMerged.length %2) == 1){
+            return listMerged[half];
+        }
+        else{
+            return ((listMerged[half] + listMerged[half-1])/2);
+        }
+    }
  
  }
  
