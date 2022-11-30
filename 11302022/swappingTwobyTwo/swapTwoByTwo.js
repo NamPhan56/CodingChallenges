@@ -35,7 +35,7 @@ Keep leftover strings in the same order.
 
         //append nonswapped
         if(swapStrIndexEnd != str.length-1){
-            newStr+= str.substring(swapStrIndexEnd);
+            newStr+= str.substring(swapStrIndexEnd+1);
         }
         return newStr;
     }
