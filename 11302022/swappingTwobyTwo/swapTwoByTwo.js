@@ -47,6 +47,8 @@ Keep leftover strings in the same order.
         let list = data.toString().split('\r\n');
 
         console.log(swapTwo(list[0]));
+        //use below code instead if you don't want to use an input.txt file.
+        //console.log(swapTwo("munchkins"));
     })
     
     
