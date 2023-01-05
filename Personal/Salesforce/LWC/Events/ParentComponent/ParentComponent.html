@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Parent LWC">
+        <p class="slds-p-horizontal_small">
+            Message : {message}
+        </p>
+        
+        <c-child-lwc onsendmessage={parentHandler}></c-child-lwc>
+    </lightning-card>
+</template>
